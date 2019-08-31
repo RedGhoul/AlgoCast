@@ -7,6 +7,25 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+  return palindromeWay1(str);
+}
 
+// Two pointer way of doing it
+function palindromeWay1(str) {
+  str = str.split('');
+  let sp = 0;
+  let ep = str.length - 1;
+  for (let i = 0; i < Math.round(str.length / 2); i++) {
+    console.log('sss');
+    if (str[sp] != str[ep]) {
+      return false;
+    } else {
+      sp = sp + 1;
+      ep = ep - 1;
+    }
+  }
+  return true;
+}
+palindromeWay1('1000000001');
 module.exports = palindrome;
