@@ -6,12 +6,7 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {
-  //return reverseWay1(str);
-  return reverseEasy(str);
-}
-console.log(reverse('avvvanesa'));
-
+// Two pointer method
 function reverseWay1(str) {
   let arr = str.split(''); // got to specify the '' so that it can break on non splits
   let loopLength = Math.round(arr.length / 2); // rounds it to the nearest int
@@ -27,9 +22,40 @@ function reverseWay1(str) {
   return arr.join('');
 }
 
+// using the built in feature of the lang
 function reverseEasy(str) {
   // using built in methods in JS
   let arr = str.split('');
   return arr.reverse().join(''); // could just call the reverse function
 }
+
+// using the string builder method
+function reverseWay2(str) {
+  str = str.split('');
+  let reverse = '';
+
+  for (let i = 0; i < str.length; i++) {
+    reverse = str[i] + reverse;
+  }
+
+  return reverse;
+}
+
+// using JS reduce
+function reverseWay3(str) {
+  str = str.split('');
+  // reduce only returns one big thing not an array
+  str = str.reduce((acc, ele) => {
+    return ele + acc;
+  }, '');
+
+  return str;
+}
+
+function reverse(str) {
+  //return reverseWay1(str);
+
+  return reverseWay3(str);
+}
+
 module.exports = reverse;

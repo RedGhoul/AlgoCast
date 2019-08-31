@@ -17,6 +17,21 @@ def test_reversestring1():
     assert reversestring1("abcd") == "dcba", "Should be dcba"
     assert reversestring1('  abcd') == 'dcba  ', "Should be dcba  "
     print(test_reversestring1.__name__ + " Passed")
-    
+
+def reverseStringWay2(str):
+    reverse = ""
+
+    for x in str:
+        reverse = x + reverse
+
+    return reverse
+
+def test_reversestring2():
+    assert reverseStringWay2("hellp") == "plleh", "Should be plleh"
+    assert reverseStringWay2("abcd") == "dcba", "Should be dcba"
+    assert reverseStringWay2('  abcd') == 'dcba  ', "Should be dcba  "
+    print(test_reversestring2.__name__ + " Passed")
+
 if __name__ == "__main__":
     test_reversestring1()
+    test_reversestring2()
