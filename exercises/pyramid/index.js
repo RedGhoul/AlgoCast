@@ -9,11 +9,30 @@
 //   pyramid(2)
 //       ' # '
 //       '###'
-//   pyramid(3)
-//       '  #  '
-//       ' ### '
-//       '#####'
+//   pyramid(4)
+//      '   #   '
+//      '  ###  '
+//      ' ##### '
+'#######';
+function pyramid(n) {
+  let maxLayerSize = n + (n - 1);
+  for (let layer = 0; layer < n; layer++) {
+    let layerp = '';
 
-function pyramid(n) {}
+    let spacing = n - layer - 1;
+    for (let y = 0; y < spacing; y++) {
+      layerp = layerp + ' ';
+    }
+    let starspacing = maxLayerSize - spacing * 2;
+    for (let y = 0; y < starspacing; y++) {
+      layerp = layerp + '#';
+    }
+    for (let y = 0; y < spacing; y++) {
+      layerp = layerp + ' ';
+    }
+    console.log(layerp);
+    layerp = '';
+  }
+}
 
 module.exports = pyramid;
