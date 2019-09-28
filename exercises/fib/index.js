@@ -8,6 +8,52 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+function fib(n) {
+  return way3(n);
+}
 
+//recursive
+function way1(n) {
+  if (n == 1) {
+    return 1;
+  } else if (n <= 0) {
+    return 0;
+  }
+
+  return way1(n - 1) + way1(n - 2);
+}
+
+// recursive + memoization
+function way2(n, arr = {}) {
+  if (n in arr) {
+    return arr[n];
+  } else if (n == 1) {
+    arr[n] = 1;
+    return 1;
+  } else if (n <= 0) {
+    arr[n] = 0;
+    return 0;
+  }
+
+  arr[n] = way2(n - 1, arr) + way2(n - 2, arr);
+  return arr[n];
+}
+
+//interativly
+function way3(n) {
+  if (n == 1) {
+    return 1;
+  }
+  n = n - 1;
+  let answer = 0;
+  let p1 = 0;
+  let p2 = 1;
+  for (let i = 0; i < n; i++) {
+    let temp = p2;
+    answer = p1 + p2;
+    p2 = answer;
+    p1 = temp;
+  }
+  return answer;
+}
 module.exports = fib;
