@@ -23,7 +23,7 @@ function way1(n) {
   return way1(n - 1) + way1(n - 2);
 }
 
-// recursive + memoization
+// recursive + memoization <- what they really want
 function way2(n, arr = {}) {
   if (n in arr) {
     return arr[n];
