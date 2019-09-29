@@ -9,7 +9,22 @@
 //   fib(4) === 3
 
 function fib(n) {
-  return way3(n);
+  return way2(n);
+}
+
+// the js memoize way
+function memoize(fn) {
+  const cache = {};
+  return function(...args) {
+    if (cache[args]) {
+      return cache[args];
+    }
+
+    const result = fn.apply(this, args);
+    cache[args] = result;
+
+    return result;
+  };
 }
 
 //recursive
@@ -56,4 +71,6 @@ function way3(n) {
   }
   return answer;
 }
+//const fib = memoize(way1);
+
 module.exports = fib;
