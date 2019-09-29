@@ -16,6 +16,12 @@ class Queue {
   remove() {
     return this.data.pop();
   }
+
+  //another way of doing this by also implementing the peek method
+  peek() {
+    // just returns the very last thing in the array
+    return this.data[this.data.length - 1];
+  }
 }
 
 module.exports = Queue;
