@@ -13,7 +13,37 @@
 //     q.remove(); // returns 2
 
 const Stack = require('./stack');
+/*
+ * There is also another way of doing this where, each time after a remove we
+ * pop everything off of the outstack and push it all back into the in stack
+ */
+class Queue {
+  constructor() {
+    this.InStack = new Stack();
+    this.OutStack = new Stack();
+  }
 
-class Queue {}
+  add(n) {
+    this.InStack.push(n);
+  }
+
+  remove() {
+    this.pushOnToOutStack();
+    return this.OutStack.pop();
+  }
+
+  peek() {
+    this.pushOnToOutStack();
+    return this.OutStack.peek();
+  }
+
+  pushOnToOutStack() {
+    if (!this.OutStack.peek()) {
+      while (this.InStack.peek()) {
+        this.OutStack.push(this.InStack.pop());
+      }
+    }
+  }
+}
 
 module.exports = Queue;
