@@ -179,15 +179,28 @@ class LinkedList {
             }
         }
     }
-}
-// const l = new LinkedList();
-// l.insertAt('hi', 0);
-// l.getFirst().data
 
-// let t = l.getAt(0).data
-// let tt = l.getAt(1).data //).toEqual(2);
-// // expect(l.getAt(2).data).toEqual(3);
-// // expect(l.getAt(3).data).toEqual(4);
+    forEach(fun) {
+        let currentNode = this.head;
+        while (currentNode) {
+            fun(currentNode);
+            currentNode = currentNode.next;
+        }
+    }
+
+    // lets you do a for of loop
+    // for (let node of l) {
+    //     node.data += 10;
+    //   }
+    *[Symbol.iterator]() {
+        let node = this.head;
+        while (node) {
+            yield node;
+            node = node.next;
+        }
+    }
+}
+
 module.exports = {
     Node,
     LinkedList
