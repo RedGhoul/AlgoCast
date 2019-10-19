@@ -50,13 +50,48 @@ class Node {
         }
     }
 }
-// const n = new Node('a');
-// n.add('b');
-// n.children.length
-// n.remove('b');
-// n.children.length
 
-class Tree {}
+class Tree {
+    constructor() {
+        this.root = null;
+    }
+
+    traverseBF(modify) {
+        //this.TBFDoubleForLoop(modify);
+        this.TBFWhilePlusSpread(modify);
+    }
+
+    traverseDF(modify) {
+        const ntv = [this.root];
+        while (ntv.length) {
+            const node = ntv.shift();
+            modify(node)
+            if (node.children) {
+                ntv.unshift(...node.children);
+            }
+        }
+    }
+
+    TBFWhilePlusSpread(modify) {
+        const arr = [this.root];
+        while (arr.length) {
+            const node = arr.shift(); // instead of pop() (removes last element of array)
+            // the spread syntax, turns array into individual elements
+            arr.push(...node.children); //ntv = ele.children;
+            modify(node);
+        }
+    }
+    TBFDoubleForLoop(modify) {
+        let ntv = [];
+        ntv.push(this.root);
+        for (const x of ntv) {
+            modify(x);
+            for (const y of x.children) {
+                ntv.push(y);
+            }
+        }
+    }
+}
 
 module.exports = {
     Tree,
