@@ -6,11 +6,12 @@
     "configurations": [
 
 
+
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\exercises\\circular\\index.js"
+            "program": "${workspaceFolder}\\exercises\\tree\\index.js"
         }
     ]
 }
