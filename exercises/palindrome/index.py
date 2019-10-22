@@ -1,3 +1,9 @@
+"""
+you can also do this as a push and pop as well where
+you push the chars on to a list 
+then pop them out and see if they are the same
+"""
+
 def palindromedetect(str):
     str = list(str)
     sp = 0
