@@ -58,7 +58,20 @@ function SSort_V1(arr) {
   return arr;
 }
 
-function mergeSort(arr) {}
+function mergeSort(arr) {
+  if (arr.length === 1) {
+    return arr;
+  }
+  const center = Math.floor(arr.length / 2);
+  // taking everything from zero to the center,
+  // not including the center
+  const left = arr.slice(0, center);
+
+  // taking everything including the center
+  const right = arr.slice(center);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
 
 function merge(left, right) {
   return merge_V2(left, right);
