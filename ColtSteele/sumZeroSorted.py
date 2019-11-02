@@ -21,7 +21,7 @@ def sumZero(arr):
     pStart = 0
     pEnd = len(arr) -1
 
-    while True:
+    while True: #pStart < pEnd
         if pStart > len(arr) - 1 or pEnd < 0:
             return None
         sumVal = arr[pStart] + arr[pEnd]
