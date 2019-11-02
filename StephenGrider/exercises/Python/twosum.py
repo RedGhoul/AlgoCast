@@ -14,9 +14,11 @@ def findTwoSum(arr,number):
         maps[abs(x-number)] = x
     
     for key in arr:
-        if maps[key] != None:
+        if key in maps:
             return (key,maps[key])
+    
+    return False
 
 
 if __name__ == "__main__":
-    print(findTwoSum([4,34,23,53,6,4],10))
+    print(findTwoSum([4,34,23,53,67,4],10))
