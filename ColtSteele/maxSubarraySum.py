@@ -25,7 +25,8 @@ def maxSubarraySum(arr, n):
 
 """
 Another way of doing this would have been to keep a running sum. And a move of the window
-would be done through subtracting something from the sum and adding something to the sum
+would be done through subtracting something from the sum and adding something to the sum.
+This way would be more effient then summing stuff for every cross section of the array
 """
 
 def maxSumAlt(arr, n):
