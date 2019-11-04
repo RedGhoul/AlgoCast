@@ -40,6 +40,10 @@ def minSubArrayLen(arr,target):
     else:
         return min(sumArrayLens)
 
+"""
+You also could have shrink the array once you found a sub array 
+that could sum to the target 
+"""
 if __name__ == "__main__":
     print(minSubArrayLen([2,3,1,2,4,3],7))
     print(minSubArrayLen([2,1,6,5,4],9))
