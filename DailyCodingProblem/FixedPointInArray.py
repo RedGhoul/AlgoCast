@@ -1,4 +1,5 @@
 """
+Problem: 273
 Description: A fixed point in an array is element whose value is equal to its
 index.
 Input: Array of sorted int
