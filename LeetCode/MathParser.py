@@ -1,4 +1,27 @@
 """
+224. Basic Calculator
+
+Implement a basic calculator to evaluate a simple expression string.
+
+The expression string may contain open ( and closing parentheses ), the plus + or minus sign -, non-negative integers and empty spaces .
+
+Example 1:
+
+Input: "1 + 1"
+Output: 2
+Example 2:
+
+Input: " 2-1 + 2 "
+Output: 3
+Example 3:
+
+Input: "(1+(4+5+2)-3)+(6+8)"
+Output: 23
+Note:
+You may assume that the given expression is always valid.
+Do not use the eval built-in library function.
+
+--------------------------------------------------------------------------------
 Given a string consisting of parentheses, single digits, and positive and negative signs, convert the string into a mathematical expression to obtain the answer.
 
 Don't use eval or a similar built-in parser.
@@ -231,6 +254,13 @@ if __name__ == "__main__":
     #print(MathParser('-1 + (2 + 3)'))
     print(MathParser('((4 - 5) + (2 + 3)) + 4'))
 
+    """
+    So the main idea of the problem is to keep track of your operations and values
+    using two different python lists (stacks). The first being for holding the operations
+    and the second to store the values. After looking through the online solutions
+    and looking at solution from daily coding problem. the best you can do is O(N) for the space
+    and time complexity
+    """
     print(evaluate("10 + 2 * 6"))
     print(evaluate("100 * 2 + 12"))
     print(evaluate("100 * ( 2 + 12 )"))
