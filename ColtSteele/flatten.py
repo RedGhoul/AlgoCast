@@ -1,5 +1,5 @@
 """
-Very similar to 341. Flatten Nested List Iterator - Medium
+Very similar to LeetCode - 341. Flatten Nested List Iterator - Medium
 https://leetcode.com/problems/flatten-nested-list-iterator/
 Given an array of arrays return a new array that has nothing but the values
 from the other arrays
