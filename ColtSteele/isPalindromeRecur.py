@@ -4,7 +4,7 @@ Check if a string is a palindrome recursivly
 Just going in for the naive approach which is to reverse it 
 and then check for equality
 
-ALWAYS STATE YOUR ASSUMTIONS
+ALWAYS STATE YOUR ASSUMPTIONS
 assuming I am going to ignore capitial letters
 """
 
