@@ -15,10 +15,12 @@ def MergeSort(arr):
     leftChunk = arr[0:center+1]
     rightChunk = arr[center+1:len(arr)]# issue was the same center
 
-    # we keep spliting our selves smaller and 
-    # smaller till we finally return something
-    # and once we do the recursive merge calles
+    # we keep spliting our array smaller and 
+    # smaller till we finally return something (len(arr) == 1)
+    # and once we do the recursive merge calls
     # spring into action from both merge sort calls
+    # so each mergesort call => merge(mergeSort(left),mergeSort(right))
+    # until it becomes merge(mergeSort(left) (returns one ele),mergeSort(right)(returns one ele)))
     return merge(MergeSort(leftChunk),MergeSort(rightChunk))
 
 
