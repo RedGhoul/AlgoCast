@@ -77,6 +77,37 @@ class SinglyLinkedList:
         
         return self.head
 
+    def get(self,index):
+        if self.length == 0 or index > self.length:
+            return None
+
+        if index == 0:
+            return self.head
+
+        start = self.head
+        count = 0
+        while count != index:
+            start = start.next
+            count += 1
+        
+        return start
+
+    def set(self, index, val):
+        if self.length == 0 or index > self.length:
+            return None
+
+        if index == 0:
+            self.head.val = val
+
+        start = self.head
+        count = 0
+        while count != index:
+            start = start.next
+            count += 1
+
+        start.val = val
+        return start
+
         
 
 
@@ -115,3 +146,15 @@ if __name__ == "__main__":
         print( "len " + str(instancSLL.length))
         print(instancSLL.head.val)
         print(instancSLL.tail.val)
+
+    print("Get values")
+    for x in range(instancSLL.length):
+        print(instancSLL.get(x).val)
+
+    print("Set Values")
+
+    for x in range(instancSLL.length):
+        instancSLL.set(x,x*2)# x always starts from zero
+
+    for x in range(instancSLL.length):
+        print(instancSLL.get(x).val)
