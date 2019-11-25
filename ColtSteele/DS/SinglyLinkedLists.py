@@ -108,8 +108,40 @@ class SinglyLinkedList:
         start.val = val
         return start
 
-        
+    
+    def insert(self,index,val):
+        # error checking code
 
+        newNode = Node(val)
+        start = self.head
+        count = 0
+        while count != index:
+            start = start.next
+            count += 1
+        
+        newNextNode = start.next
+
+        start.next = newNode
+
+        newNode.next = newNextNode
+
+        self.length+=1
+
+    def remove(self, index):
+        start = self.head
+        count = 0
+
+        while count != index-1:
+            start = start.next
+            count += 1
+
+        newNext = start.next.next
+
+        start.next = newNext
+        
+        self.length-=1
+        
+        
 
     
 
@@ -158,3 +190,50 @@ if __name__ == "__main__":
 
     for x in range(instancSLL.length):
         print(instancSLL.get(x).val)
+
+
+    print("Insert Values")
+
+    # for x in range(instancSLL.length):
+    #     instancSLL.insert(x,x*2)# x always starts from zero
+    instancSLL.insert(2,222222)
+    for x in range(instancSLL.length):
+        print(instancSLL.get(x).val)
+
+    print("remove Values")
+
+    # for x in range(instancSLL.length):
+    #     instancSLL.insert(x,x*2)# x always starts from zero
+    instancSLL.remove(3)
+    for x in range(instancSLL.length):
+        print(instancSLL.get(x).val)
+
+
+    # reversing a linked list
+    
+    node1 = Node(1)
+    node2 = Node(2)
+    node3 = Node(3)
+    node4 = Node(4)
+    node5 = Node(5)
+    node6 = Node(6)
+    node7 = Node(7)
+
+    node1.next = node2
+    node2.next = node3
+    node3.next = node4
+    node4.next = node5
+    node5.next = node6
+    node6.next = node7
+
+    start = node1
+    shouldbepointingbackto = None
+    while start != None:
+        rightBeside = start.next
+        start.next = shouldbepointingbackto
+
+        shouldbepointingbackto = rightBeside
+        start = rightBeside
+        
+
+
