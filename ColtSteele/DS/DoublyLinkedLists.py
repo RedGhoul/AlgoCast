@@ -78,6 +78,77 @@ class DoublyLinkedList:
             self.head = newNode
 
         self.length += 1
+
+
+    def get(self, index):
+
+        if self.length == 0:
+            return None
+
+        start = self.head
+        count = 0
+        while start != None:
+            if count == index:
+                return start
+            else:
+                start = start.next
+                count += 1
+
+
+    def setVal(self,value,index):
+        if self.length == 0:
+            return None
+        
+        start = self.head
+        count = 0
+        while start != None:
+            if count == index:
+                start.value = value
+                return
+            else:
+                start = start.next
+                count +=1
+
+    def insertVal(self,value,index):
+        newNode = Node(value)
+        if self.length == 0 or index > self.length or index < self.length:
+            return None
+
+        start = self.head
+        count = 0
+
+        while start != None:
+            if count == index:
+                newNode.next = start.next
+                start.next = newNode
+                newNode.prev = start
+                return
+            else:
+                start = start.next
+
+
+    def removeVal(self,value, index):
+
+        if self.length == 0:
+            return None
+
+        start = self.head
+        count = 0
+
+        while start != None:
+            if count == index:
+                prevNode = start.prev
+                nextNode = start.next
+
+                prevNode.next = nextNode
+                nextNode.prev = prevNode
+            else:
+                start = start.next
+
+
+        
+
+
     
 
 
