@@ -22,7 +22,7 @@ class MaxBinaryHeap:
         # if not then I stop
 
             currentChild = listSize - 1
-            currentParent = math.ceil(currentChild/2) - 1
+            currentParent = math.floor((currentChild -1) /2)
             notNull = currentParent >= 0
             while self.values[currentChild] > self.values[currentParent] and notNull:
                 temp = self.values[currentChild]
@@ -30,7 +30,7 @@ class MaxBinaryHeap:
                 self.values[currentParent] = temp
 
                 currentChild = currentParent
-                currentParent = math.ceil(currentChild/2) - 1
+                currentParent = math.floor((currentChild -1) /2)
                 notNull = currentParent >= 0
 
 
@@ -42,12 +42,13 @@ class MaxBinaryHeap:
 if __name__ == "__main__":
     MBHs = MaxBinaryHeap()
 
-    MBHs.insert(3)
+    MBHs.insert(41)
+    MBHs.insert(39)
     MBHs.insert(33)
+    MBHs.insert(18)
+    MBHs.insert(27)
+    MBHs.insert(12)
+    MBHs.insert(55)
+    MBHs.insert(45)
     MBHs.insert(333)
-    MBHs.insert(3333)
-    MBHs.insert(33333)
-    MBHs.insert(333333)
-    MBHs.insert(1)
-
     print(MBHs.values)
