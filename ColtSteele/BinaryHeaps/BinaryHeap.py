@@ -33,10 +33,59 @@ class MaxBinaryHeap:
                 currentParent = math.floor((currentChild -1) /2)
                 notNull = currentParent >= 0
 
+    def ExtractMax(self):
+        if len(self.values) == 0:
+            return None
 
-            
+        
 
-            
+        # Setting the smallest value to the top 
+        minNode = self.values.pop()
+
+        if len(self.values) == 0 or len(self.values) == 1:
+            return minNode
+
+        maxNode = self.values[0]
+        
+
+        self.values[0] = minNode
+        if len(self.values) < 3:
+            if self.values[0] < self.values[1]:
+                temp = self.values[0] 
+                self.values[0] = self.values[1]
+                self.values[1] = temp
+            return maxNode
+
+
+        else:
+            currentNodeP = 0
+            leftNode = (2 * currentNodeP) + 1
+            rightNode =  (2 * currentNodeP) + 2
+
+            while leftNode < len(self.values) and rightNode < len(self.values):
+                if self.values[leftNode] > self.values[rightNode]: # figuring out which side is greater
+                    if self.values[currentNodeP] < self.values[leftNode]: # figuring out if the top node is less than leftnode
+                        temp = self.values[currentNodeP]
+                        self.values[currentNodeP] = self.values[leftNode]
+                        self.values[leftNode] = temp
+
+                        currentNodeP = leftNode
+                        leftNode = (2 * currentNodeP) + 1
+                        rightNode = (2 * currentNodeP) + 2
+
+                elif self.values[rightNode] > self.values[leftNode]:
+                    if self.values[currentNodeP] < self.values[rightNode]:
+                        temp = self.values[currentNodeP]
+                        self.values[currentNodeP] = self.values[rightNode]
+                        self.values[rightNode] = temp
+
+                        currentNodeP = rightNode
+                        leftNode = (2 * currentNodeP) + 1
+                        rightNode = (2 * currentNodeP) + 2
+
+                    
+            print(self.values)
+            return maxNode
 
 
 if __name__ == "__main__":
@@ -49,6 +98,8 @@ if __name__ == "__main__":
     MBHs.insert(27)
     MBHs.insert(12)
     MBHs.insert(55)
-    MBHs.insert(45)
-    MBHs.insert(333)
+
     print(MBHs.values)
+
+    MBHs.ExtractMax()
+    MBHs.ExtractMax()
