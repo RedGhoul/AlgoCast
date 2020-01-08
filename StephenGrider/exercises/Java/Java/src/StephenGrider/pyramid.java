@@ -21,7 +21,7 @@ public class pyramid {
 	//        '#######'
 	
 	public static void main(String[] args) {
-		makePyramid(3);
+		makePyramid(7);
 	}
 	
 	public static void makePyramid(double height) {
@@ -32,7 +32,7 @@ public class pyramid {
 			System.out.println("#");
 		}
 		
-		double baseSize = (height * 2) -1;
+		double baseSize = (height * 2) -1;// since array starts at index zero
 		ArrayList<String> layer = new ArrayList<String>();
 		
 		for(int i = 0; i < baseSize; i ++) {
