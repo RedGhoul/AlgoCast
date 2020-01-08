@@ -3,7 +3,7 @@ package StephenGrider;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Anagrams {
+public class Anagrams {  
 	// --- Directions
 	// Check to see if two provided strings are anagrams of each other.
 	// One string is an anagram of another if it uses the same characters
