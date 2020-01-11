@@ -1,4 +1,4 @@
-package Random;
+package com.random.problems;
 
 public class AddBinaryStrings {
 

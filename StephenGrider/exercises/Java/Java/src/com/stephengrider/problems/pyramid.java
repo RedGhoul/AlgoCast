@@ -1,4 +1,4 @@
-package StephenGrider;
+package com.stephengrider.problems;
 
 import java.util.ArrayList;
 
