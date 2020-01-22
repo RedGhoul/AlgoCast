@@ -2,7 +2,7 @@ package com.stephengrider.problems;
 
 import java.util.ArrayList;
 
-public class reverseString {
+public class ReverseString {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

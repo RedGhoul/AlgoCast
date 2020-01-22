@@ -3,7 +3,7 @@ package com.stephengrider.problems;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class fibonacci {
+public class Fibonacci {
 
 	public static void main(String[] args) {
 		System.out.println(recursive_Fibonacci_Memo(29, null));

@@ -2,7 +2,7 @@ package com.stephengrider.problems;
 
 import java.util.ArrayList;
 
-public class pyramid {
+public class Pyramid {
 	// --- Directions
 	// Write a function that accepts a positive number N.
 	// The function should console log a pyramid shape
