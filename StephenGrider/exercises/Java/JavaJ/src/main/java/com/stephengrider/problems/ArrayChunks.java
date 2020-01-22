@@ -3,7 +3,7 @@ package com.stephengrider.problems;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Chunks {
+public class ArrayChunks {
 	// --- Directions
 	// Given an array and chunk size, divide the array into many subarrays
 	// where each subarray is of length size
@@ -64,7 +64,9 @@ public class Chunks {
 		
 		System.out.println(createChunks(input6,10));
 	}
-	
+	/*
+	* Assuming we are getting an array list in
+	* */
 	public static ArrayList<ArrayList<Integer>> createChunks(ArrayList<Integer> input, int size){
 		
 		ArrayList<ArrayList<Integer>> answer = new ArrayList<ArrayList<Integer>>();
@@ -76,7 +78,16 @@ public class Chunks {
 		ArrayList<Integer> tempBuffer = new ArrayList<Integer>();
 		
 		for(int i = 0; i < input.size(); i++) {
-			
+			/*
+			We check if the "i" is equal to the size.
+			if it isn't then we keep adding each element to the
+			temp buffer.
+
+			Once we get an "i" to our size we add what we have in out tempbuffer
+			to the arrayList of arrayLists. Then we set the tempbuffer to a
+			new arrayList. And then we add the current element to the new
+			tempbuffer.
+			 */
 			if (i % size ==0 && i != 0) {
 				answer.add(tempBuffer);
 				tempBuffer = new ArrayList<Integer>();
@@ -85,7 +96,13 @@ public class Chunks {
 				tempBuffer.add(input.get(i));
 			}
 		}
-		
+
+		/*
+		* Once we finished with the array. We check to see if we have
+		* anything else in the tempBuffer. If we do then it is the left
+		* over that could not form an array to the size criteria. So we
+		* add what ever is left to the answer array and return it
+		* */
 		if(tempBuffer.size() > 0) {
 			answer.add(tempBuffer);
 		}

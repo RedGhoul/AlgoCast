@@ -29,6 +29,8 @@ public class Capitalize {
 		for(int i =0; i < pieces.length; i++) {
 			// got to use substring to figure out what to change and 
 			// how to change it
+			// substring always give you back a new string from startIndex to endIndex -1
+			// in this case its 0 to 1-1 = 0 so it only returns the very first thing
 			String one = pieces[i].substring(0,1).toUpperCase();
 			String two = pieces[i].substring(1);
 			pieces[i] = one + two;
