@@ -23,7 +23,14 @@ public class Pyramid {
 	public static void main(String[] args) {
 		makePyramid(7);
 	}
-	
+	/**
+	 * The way this was solved was by finding the mathematical relationship
+	 * between the final base height and the number of layers.
+	 *
+	 * Then finding the mid point of the layer. And then for each layer
+	 * increasing the number of "#" of each side of the mid point which
+	 * already had a "#"
+	 * **/
 	public static void makePyramid(double height) {
 		// error checking code
 		if(height == 0) {
