@@ -62,16 +62,23 @@ public class LinkedList {
 
     public void insertLast(String data){
         if(this.Head == null){
+            this.Head = new Node(data,null);
             return;
         }
 
         Node currentNode = this.Head;
-        while(currentNode.getNext() != null){
-            currentNode = currentNode.getNext();
-            if(currentNode.getNext() == null){
-                currentNode.setNext(new Node(data,null));
+        if(currentNode.getNext() == null){
+            currentNode.setNext(new Node(data,null));
+        }else{
+            while(currentNode.getNext() != null){
+                currentNode = currentNode.getNext();
+                if(currentNode.getNext() == null){
+                    currentNode.setNext(new Node(data,null));
+                    return;
+                }
             }
         }
+
 
     }
 
@@ -138,6 +145,24 @@ public class LinkedList {
             }
         }
 
+    }
+
+    // 1 -> 2 -> 3 -> 4
+    //ab
+    //      a    b
+    public Node findMidPoint(){
+        Node currentP = this.Head;
+        Node endP = this.Head;
+        while(endP.getNext() != null){
+            currentP = currentP.getNext();
+            endP = endP.getNext().getNext();
+            if(endP==null || endP.getNext() == null){
+                break;
+            }
+
+        }
+
+        return currentP;
     }
 
 
