@@ -7,8 +7,8 @@ import java.util.HashMap;
 * */
 public class areThereDuplicates {
     public static void main(String[] args){
-
-        System.out.println(areThereDuplicates.check(new int[]{1,2,3,4,5,6,7,8,1}));
+        Integer tt = 1;
+        System.out.println(areThereDuplicates.check(new int[]{tt,2,3,4,5,6,7,8,1}));
     }
 
     public static boolean check(int[] input){

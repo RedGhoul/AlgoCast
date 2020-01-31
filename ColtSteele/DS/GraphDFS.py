@@ -16,7 +16,8 @@ stack. After that keep looping till there is
 nothing left in the stack
 """
 import Graph
-
+# the most important thing is that you need to keep track of what you have 
+# discover and have yet to visit
 def DFSReCurGraph(vertex,Alist):
     
     results = []
@@ -35,6 +36,7 @@ def DFSReCurGraph(vertex,Alist):
     run(vertex)
 
     return results
+
 
 def DFSInterGraph(vertex,Alist):
     stack = []
