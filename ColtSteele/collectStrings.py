@@ -45,7 +45,6 @@ def collectStrings(objectIn):
                 # where as if you don't try to return anything, it picks up where it 
                 # left off in its loop
 
-        return
             
 
     print(recur(objectIn))
