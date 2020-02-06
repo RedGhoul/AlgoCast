@@ -5,7 +5,7 @@ public class BinarySerach {
     public static void main(String[] args){
         int temps = Math.round(1 /2);
         int[] input = new int[] {22,23};
-        System.out.println(binarySearch(input, ,0,input.length-1));
+        //System.out.println(binarySearch(input, ,0,input.length-1));
     }
 
     /*
@@ -49,7 +49,7 @@ public class BinarySerach {
 
         int potentialMatch = array[mid];
 
-        if(potentialMatch == taget){
+        if(potentialMatch == target){
             return mid;
         }else if(target > potentialMatch){
             return binarySearchProper(array,target,mid+1,end); // greater then case
