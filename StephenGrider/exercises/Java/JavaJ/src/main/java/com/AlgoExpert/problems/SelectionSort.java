@@ -18,7 +18,7 @@ public class SelectionSort {
      * so you have a sorted array being built up behind the current value of i
      * **/
     public static int[] selectionSort(int[] array) {
-        for(int i = 0; i < array.length-1; i++){
+        for(int i = 0; i < array.length; i++){
 
             int smallestIndex = i;
 
