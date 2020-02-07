@@ -1,4 +1,4 @@
-package com.random.problems;
+package com.AlgoExpert.problems;
 
 public class BinarySerach {
 
@@ -14,6 +14,10 @@ public class BinarySerach {
     * if less then middle minus 1 is the end
     * if greater then middle + 1 is the start
     * then you keep finding the mid by start + end / 2
+    *
+    *
+    * -> the sort of methodology you used in the start - Arrays.copyOf(array, start , end);
+    * // have to add one to the end to get the actual end you want
     * */
     public static int binarySearch(int[] array, int target, int start,int end) {
         if(end-start == 1 && array[end] ==target){
