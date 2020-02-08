@@ -3,6 +3,15 @@ package com.AlgoExpert.problems;
 import java.util.HashMap;
 
 public class CaesarCipherEncryptor {
+
+    /*
+    * Formula runs in linear time if using unicode way O(n) time - N is the input
+    * Formula runs in linear time if using the char array way but it
+    * would be O(m) if where M is the array length of the alphabet
+    *
+    * Space is O(n)
+    * */
+
     public static void main(String[] args){
         System.out.println(caesarCypherEncryptorV2("xyz",2));
     }
@@ -36,7 +45,7 @@ public class CaesarCipherEncryptor {
             * inputIndex % 26 since we just want the reminder aka where it would end up
             * on the alphabet index
             * */
-            return Character.toString(alphabet.charAt(-1 + inputIndex % 26));
+            return Character.toString(alphabet.charAt((-1 + inputIndex) % 26));
         }else{
             return Character.toString(alphabet.charAt(inputIndex-1));
         }
