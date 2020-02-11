@@ -67,7 +67,7 @@ public class BSTValidation {
 
             if(node != null){
                 if(!validationHelper(node.getRight(),node.getData(),max)){
-                        return false;
+                    return false;
                 };
             }
         return true;
