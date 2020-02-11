@@ -55,8 +55,10 @@ public class DFS {
                      * List<String> newList = Stream.concat(listOne.stream(), listTwo.stream())
                              .collect(Collectors.toList());
                      * */
-                    currentNode.children.addAll(nodeArr);
-                    nodeArr = currentNode.children;
+                    currentNode.children.addAll(nodeArr); // adding the stuff to the very end so you
+                    // have it where the new things are all the beginning, and the old stuff is added at the end
+                    nodeArr = currentNode.children; // so now you take that array which happens to the be the childern
+                    // of the current node and you set it equal to the current Node Array
                 }
 
                 return Node.DfsHelper(nameArr,nodeArr);
