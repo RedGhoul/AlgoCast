@@ -1,5 +1,7 @@
 package com.AlgoExpert.problems;
 
+import com.stephengrider.problems.MaxChars;
+
 public class kadanesAlgorithm {
     /*
     * Kind of like common sense since the only thing that could limit your max sum
@@ -29,5 +31,18 @@ public class kadanesAlgorithm {
             }
         }
         return currentMax;
+    }
+
+    public static int kadanesAlgorithmV2(int[] array) {
+        if(array.length==0){
+            return 0;
+        }
+        int maxEndingHere = array[0];
+        int maxSoFar = array[0];
+        for(int i = 1; i < array.length; i++){
+            maxEndingHere = Math.max(maxEndingHere,maxEndingHere+ array[i]);
+            maxSoFar = Math.max(maxEndingHere, maxSoFar);
+        }
+        return maxSoFar;
     }
 }
