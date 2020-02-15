@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BreathFirstSearch {
+
+
     static class Node {
         String name;
         List<Node> children = new ArrayList<Node>();
@@ -20,6 +22,12 @@ public class BreathFirstSearch {
             return BFSHelper(this.children,array);
         }
 
+        /*
+        * Could Have Also done this iteratively
+        *
+        * TIME: O(V+E)
+        * SPACE: O(V)
+        * */
         public static List<String> BFSHelper(List<Node> nodes,List<String> names){
             if(nodes.size() == 0){
                 return names;
