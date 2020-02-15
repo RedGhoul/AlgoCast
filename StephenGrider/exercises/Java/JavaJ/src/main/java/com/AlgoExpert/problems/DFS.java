@@ -40,6 +40,10 @@ public class DFS {
                 return Node.DfsHelper(nameArr,nodeArr);
             }
 
+            /*
+            * TIME: O(V+E)
+            * SPACE: O(V)
+            * */
             public static List<String> DfsHelper(List<String> nameArr,List<Node> nodeArr){
                 if(nodeArr.size() == 0){
                     return nameArr;
