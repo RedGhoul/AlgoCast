@@ -1,9 +1,10 @@
 package com.AlgoExpert.Test;
 
-import com.AlgoExpert.Code.TwoNumberSum;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+
+import com.AlgoExpert.Code.TwoNumberSum;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
