@@ -36,6 +36,4 @@ public class GroupAnagrams {
         return tempAlpha;
     }
 
-
-}
 }
