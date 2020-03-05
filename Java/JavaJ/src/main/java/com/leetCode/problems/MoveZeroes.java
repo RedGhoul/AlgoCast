@@ -1,6 +1,7 @@
 package com.leetCode.problems;
 
-public class MoveZeroes {
+public class MoveZeroes{
+
     /*
     * Time: O(n)
     * Space: O(1) In place

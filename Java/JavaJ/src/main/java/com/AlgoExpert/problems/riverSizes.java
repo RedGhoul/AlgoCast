@@ -23,7 +23,7 @@ public class riverSizes {
         int currentRiverSize = 0;
         List<Integer[]> nodesToExplore = new ArrayList<Integer[]>();
         nodesToExplore.add(new Integer[] {i, j});
-        while(!nodesToExplore.isEmpty()){
+        while(!nodesToExplore.isEmpty()){ // keep going with this cycle till you have nothing else to explore
             Integer[] currentNode = nodesToExplore.get(nodesToExplore.size() -1);
             nodesToExplore.remove(nodesToExplore.size()-1);
             i = currentNode[0];
@@ -36,12 +36,13 @@ public class riverSizes {
                 continue;
             }
             currentRiverSize++;
+            // Using getUnivistedNeighbors to get all your children
             List<Integer[]> unvistedNeighbors = getUnivistedNeighbors(i,j,matrix,visited);
             for(Integer[] neighbour: unvistedNeighbors){
                 nodesToExplore.add(neighbour);
             }
         }
-        if(currentRiverSize > 0){
+        if(currentRiverSize > 0){ // in the end check to see how man nodes you hit
             sizes.add(currentRiverSize);
         }
     }
