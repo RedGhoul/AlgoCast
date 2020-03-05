@@ -19,8 +19,12 @@ Given an integer N, print the Nth term of this sequence.
 
 def lookandsayseq(n):
     answers = ["1"]
-    count = 0
+    count = 1
     while True:
+        if n == 1:
+            return "1"
+        if n == 2:
+            return "11"
         if count == n-1:
             return answers.pop()
 
@@ -43,13 +47,13 @@ def help(value):
     if len(value) == 1:
         return ["11"]
     while True:
-        if p2 == len(value):
-            ans.append(value[p1] * (p2-p1))
+        if p2 == len(value): # looking at this to see when it ends
+            ans.append(value[p1] * (p2-p1)) # "1" * 4 = "1111"
             break
-        if value[p1] == value[p2]:
+        if value[p1] == value[p2]: # looking at this to see how many of the same type there are
             p2+=1
         else:
-            ans.append(value[p1] * (p2-p1))
+            ans.append(value[p1] * (p2-p1)) # you dump how many of the same type there are
             p1 = p2
     
     return ans
@@ -57,4 +61,4 @@ def help(value):
     
 
 if __name__ == "__main__":
-    print(lookandsayseq(20))
+    print(lookandsayseq(4))
