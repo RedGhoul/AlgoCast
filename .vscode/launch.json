@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "CodeLens (Launch) - CircularLinkedList",
+      "request": "launch",
+      "mainClass": "com.stephengrider.problems.CircularLinkedList",
+      "projectName": "JavaJ"
+    },
+    {
       "name": "Python: Current File",
       "type": "python",
       "request": "launch",
