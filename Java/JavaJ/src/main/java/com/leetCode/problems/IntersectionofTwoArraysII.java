@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 public class IntersectionofTwoArraysII {
+    /*
+    * Hash dump and iterating through an array finding stuff in the hash dump
+    * */
 //    [4,9,5]
 //            [9,4,9,8,4]
 
