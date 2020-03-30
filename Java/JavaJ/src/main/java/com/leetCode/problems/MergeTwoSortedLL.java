@@ -10,6 +10,32 @@ public class MergeTwoSortedLL {
     // Could do this recursively with only a few lines of code
     // will do that next time
 
+    // Better iterative solution
+    public ListNode mergeTwoListsV2(ListNode l1, ListNode l2) {
+        ListNode head = new ListNode(0); // this is our place holder node
+        // we have it here to build on top of
+        ListNode handler = head;
+        while(l1 != null && l2 != null) {
+            if (l1.val <= l2.val) { // less than or equal to
+                handler.next = l1; // the next node becomes l1 if it is smaller than l2
+                l1 = l1.next; // then we move l1 forward in its list
+            } else { // if l2 is less than. Do the same thing we did above
+                handler.next = l2;
+                l2 = l2.next;
+            }
+            handler = handler.next; // finally move the handler to its new current node
+        }
+
+        // if you reach this point then you know that l1 or l2 or both are null
+        if (l1 != null) {
+            handler.next = l1; // we are assigning just one non null node.
+            // this works out since this one non null node still has a bunch of connections in front of it
+        } else if (l2 != null) {
+            handler.next = l2;
+        }
+
+        return head.next; // we get rid of it right here, since we are using the node right after it
+    }
     // Time O(L2.len + L1.len) & Space O(L2.len + L1.len)
     // Iterative Solution
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
