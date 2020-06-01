@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class StackImplementation {
     public static void main(String[] args){
-
+        StackImplementation s = new StackImplementation();
+        s.push(1);
+        s.push(2);
+        System.out.println(s.pop());
+        System.out.println(s.pop());
     }
 
     private ArrayList<Integer> arrayList;
