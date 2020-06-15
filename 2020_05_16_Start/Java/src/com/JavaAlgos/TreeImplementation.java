@@ -23,8 +23,8 @@ public class TreeImplementation {
         c3.childern.add(ccc1);
 
 
-        ArrayList<String> stuff = BreathFirstSearch(root);
-
+        //ArrayList<String> stuff = BreathFirstSearch(root);
+        ArrayList<String> stuff2 = DepthFirstSearch(root);
     }
 
     public TreeNodeImplementation root;
@@ -39,11 +39,37 @@ public class TreeImplementation {
         return BFSHelper(NodeStack,AnswerStack);
     }
 
-    public static ArrayList<String> BFSHelper(ArrayList<TreeNodeImplementation> Stack,ArrayList<String> AnswerStack){
+    /*
+    * All about using a Queue. Treating an ArrayList like one,
+    * always removing from the left & and adding to the right.
+    * */
+    private static ArrayList<String> BFSHelper(ArrayList<TreeNodeImplementation> Stack,ArrayList<String> AnswerStack){
         if(Stack.size() == 0) return AnswerStack;
         TreeNodeImplementation curNode = Stack.remove(0);
         AnswerStack.add(curNode.data);
         Stack.addAll(curNode.childern);
         return BFSHelper(Stack,AnswerStack);
     }
+
+    public static ArrayList<String> DepthFirstSearch(TreeNodeImplementation root){
+        ArrayList<TreeNodeImplementation> NodeStack = new ArrayList<TreeNodeImplementation>();
+        NodeStack.add(root);
+        return DFSHelper(NodeStack,new ArrayList<String>());
+    }
+
+    /*
+    * Same idea as BFS expect your putting all the children at the front, and are picking from the front
+    * So you are using a stack FIFO
+    * */
+    private static ArrayList<String> DFSHelper(ArrayList<TreeNodeImplementation> Stack,ArrayList<String> AnswerStack){
+        if(Stack.size() ==0)return AnswerStack;
+        TreeNodeImplementation curNode = Stack.remove(0);
+        AnswerStack.add(curNode.data);
+        int curSize = curNode.childern.size()-1;
+        for(int i =curSize; i >= 0; i--){ //have to put a greater then there when counting backwards
+            Stack.add(0,curNode.childern.get(i));
+        }
+        return DFSHelper(Stack,AnswerStack);
+    }
+
 }
