@@ -19,6 +19,8 @@ public class TreeNodeImpl {
 
         TreeNodeImpl things = root.Contains(12);
 
+        System.out.println(root.Validate());
+
     }
     public int data;
     public TreeNodeImpl left;
@@ -68,6 +70,38 @@ public class TreeNodeImpl {
             return this;
         }
         return null;
+    }
+
+    public boolean Validate(){
+        return this.ValidateHelper(this, Integer.MIN_VALUE,Integer.MAX_VALUE);
+    }
+
+    private boolean ValidateHelper(TreeNodeImpl node, int Min, int Max){
+        if(node == null) return false;
+
+        if(node != null && node.data > Max){
+            return false;
+        }
+        if(node != null && node.data < Min){
+            return false;
+        }
+        /**
+         * You got the basic idea. However the reason we got to put in the recursive call back into the
+         * IF statement, is because we don't want to return a true too early. Without validating the
+         * rest of the BST. We only want to return something early if it is a false.
+         *
+         * Only want to return true after everything has been looked over
+         *
+         * The case when you are on the right side (fully unraveled from the right)
+         * , your right will be a 12, but the MIN at 10, and Max will be Integer.MAX_VALUE
+         * */
+        if(node.left != null && !ValidateHelper(node.left,Min,node.data)){
+            return false;
+        }
+        if(node.right != null && !ValidateHelper(node.right,node.data,Max)){
+            return false;
+        }
+        return true;
     }
 
 
