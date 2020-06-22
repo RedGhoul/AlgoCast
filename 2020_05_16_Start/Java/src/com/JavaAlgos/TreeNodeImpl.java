@@ -86,7 +86,7 @@ public class TreeNodeImpl {
             return false;
         }
         /**
-         * You got the basic idea. However the reason we got to put in the recursive call back into the
+         * You got the basic idea. However the reason we got to put in the recursive call, back into the
          * IF statement, is because we don't want to return a true too early. Without validating the
          * rest of the BST. We only want to return something early if it is a false.
          *
