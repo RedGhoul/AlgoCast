@@ -8,6 +8,48 @@ public class BasicSortingAlgorithms {
         System.out.println(Arrays.toString(selectionSort(new int[]{10,0,97,-30,5})));
     }
 
+    public static int[] mergeSort(int [] arrayIn){
+        if(arrayIn.length == 0 || arrayIn.length == 1) return arrayIn;
+        if(arrayIn.length == 2) return merge(
+                Arrays.copyOfRange(arrayIn,0,0),
+                Arrays.copyOfRange(arrayIn,1,1)
+        );
+        int midPoint = arrayIn.length / 2;
+        int[] left = Arrays.copyOfRange(arrayIn,0,midPoint);
+        int[] right = Arrays.copyOfRange(arrayIn, midPoint, arrayIn.length);
+        return merge(mergeSort(left),mergeSort(right));
+        /**
+         * Each one of these smaller mergeSorts keep building up bigger
+         * pieces of the left and right side of the final array
+         * **/
+    }
+
+    public static int[] merge(int[] left, int[] right){
+        int [] newArr = new int[left.length+right.length];
+        for (int i =0; i < left.length;i++){
+            if(left[i] < right[i]){
+                newArr[i] = left[i];
+                left = Arrays.copyOfRange(left,i,left.length);
+            }else {
+                newArr[i] = right[i];
+                right = Arrays.copyOfRange(right,i,right.length);
+            }
+        }
+        if(left.length != 0){
+            newArr = arrayAdd(newArr,left);
+        }
+        if(right.length != 0){
+            newArr = arrayAdd(newArr,right);
+        }
+        return newArr;
+    }
+
+    public static int[] arrayAdd(int[] left, int[] right){
+        int[] result = new int[left.length +right.length];
+        System.arraycopy(left, 0, result, 0,  left.length);
+        System.arraycopy(right, 0, result, left.length, right.length);
+        return result;
+    }
     /**
      * The prove me wrong algorithm - O(n^2)
      * 1) You assume that the current index you are at, is the location of the min value
