@@ -1,4 +1,4 @@
-package com.JavaAlgos;
+package com.JavaAlgos.StephenGrider;
 
 import java.util.HashMap;
 import java.util.Map;

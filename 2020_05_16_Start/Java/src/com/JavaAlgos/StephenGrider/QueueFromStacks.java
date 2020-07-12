@@ -1,4 +1,4 @@
-package com.JavaAlgos;
+package com.JavaAlgos.StephenGrider;
 /*
 * Q: Create a Queue from two stacks. It should implement the methods: "add",
 * "remove", and "peek"

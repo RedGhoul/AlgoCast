@@ -1,4 +1,4 @@
-package com.JavaAlgos;
+package com.JavaAlgos.StephenGrider;
 
 public class MidPoint {
     public static void main(String[] args){

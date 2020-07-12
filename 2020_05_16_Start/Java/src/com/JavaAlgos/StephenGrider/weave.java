@@ -1,6 +1,4 @@
-package com.JavaAlgos;
-
-import java.util.ArrayList;
+package com.JavaAlgos.StephenGrider;
 
 public class weave {
     public static void main(String[] args){

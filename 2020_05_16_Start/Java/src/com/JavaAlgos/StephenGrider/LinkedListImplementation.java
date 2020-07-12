@@ -1,4 +1,4 @@
-package com.JavaAlgos;
+package com.JavaAlgos.StephenGrider;
 
 public class LinkedListImplementation {
     public static void main(String[] args){
