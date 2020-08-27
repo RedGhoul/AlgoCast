@@ -1,5 +1,9 @@
 ### Sorting Algorithms
-
+- Best Case Sorting Algos
+    Time Complexity is O(N*log(N))
+    Assume that this is the complexity when you use a built in 
+    sorting function in a langauge. When deriving the time complexity
+    
 - Bubble Sort - N^2 - Easiest
 - Selection Sort - N^2 - Easier
 - Merge Sort - N*log(N) - Medium
