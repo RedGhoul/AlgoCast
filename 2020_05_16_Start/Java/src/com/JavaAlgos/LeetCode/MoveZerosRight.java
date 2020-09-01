@@ -3,7 +3,7 @@ package com.JavaAlgos.LeetCode;
 import java.util.Arrays;
 
 public class MoveZerosRight {
-    public static void main(String[] args){
+    public static void main(final String[] args){
         System.out.println(Arrays.toString(moveZeroes(new int[] {1,0,0,0,3})));
         System.out.println(Arrays.toString(moveZeroes(new int[] {0,0,0,0,0,220,0,20,2})));
     }
@@ -12,7 +12,7 @@ public class MoveZerosRight {
     Given an array of ints move all zeros to the right while keeping
     the original order of elements
     * */
-    public static int[] moveZeroes(int[] nums) {
+    public static int[] moveZeroes(final int[] nums) {
         if(nums == null || nums.length <= 1) return null;
         int p2 = 0;
         for(int p1 = 1; p1 < nums.length; p1++){
@@ -27,8 +27,8 @@ public class MoveZerosRight {
         return nums;
     }
     
-    public static void swap(int[] nums, int a, int b){
-        int aa = nums[a];
+    public static void swap(final int[] nums, final int a, final int b){
+        final int aa = nums[a];
         nums[a] = nums[b];
         nums[b] = aa;
     }
