@@ -6,10 +6,10 @@ public class Flatten {
      * This is more of a interperated lang question
      * 
      */
-    public static void main(String[] args){
+    // public static void main(String[] args){
 
-    }
+    // }
 
-    public static void flattenArray(int)
+    // public static void flattenArray(int)
     
 }

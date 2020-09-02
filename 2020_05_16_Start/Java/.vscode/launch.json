@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - capitalizeFirst",
+            "request": "launch",
+            "mainClass": "com.JavaAlgos.ColtSteele.Recursion.capitalizeFirst",
+            "projectName": "Java_69ffba9"
+        },
+        {
             "name": "Python: Current File",
             "type": "python",
             "request": "launch",
