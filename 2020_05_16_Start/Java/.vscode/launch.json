@@ -9,6 +9,13 @@
             "name": "CodeLens (Launch) - capitalizeFirst",
             "request": "launch",
             "mainClass": "com.JavaAlgos.ColtSteele.Recursion.capitalizeFirst",
+            "projectName": "Java_fb85ccd4"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - capitalizeFirst",
+            "request": "launch",
+            "mainClass": "com.JavaAlgos.ColtSteele.Recursion.capitalizeFirst",
             "projectName": "Java_69ffba9"
         },
         {

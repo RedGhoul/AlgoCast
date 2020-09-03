@@ -1,0 +1,3 @@
+Same thing as flatten and nestedEvenSum except that
+instead of collecting things, you are changing the 
+type thats already there from a INT type to a STRING type
