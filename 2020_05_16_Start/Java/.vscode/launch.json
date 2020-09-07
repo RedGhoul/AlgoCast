@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - InsertionSort",
+            "request": "launch",
+            "mainClass": "com.JavaAlgos.ColtSteele.SortingAlgorithms.InsertionSort",
+            "projectName": "Java_fb85ccd4"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - SelectionSort",
             "request": "launch",
             "mainClass": "com.JavaAlgos.ColtSteele.SortingAlgorithms.SelectionSort",
