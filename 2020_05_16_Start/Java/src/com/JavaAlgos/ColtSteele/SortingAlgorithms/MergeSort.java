@@ -18,6 +18,11 @@ public class MergeSort {
         arr2.add(99);
         arr2.add(100);
         System.out.println(Arrays.toString(MergeArrayLists(arr2, arr1).toArray()));
+        // even if one of the arrays was longer then the other. All we would have to do
+        // is
+        // add the left over elements of that array onto the result array. And
+        // everything
+        // would be sorted, since we are mergeing two SORTED arrays in the first place
     }
 
     // merging two sorted arrays
