@@ -12,6 +12,12 @@ public class SinglyLinkedList {
         // test.pop();
         // test.pop();
         // test.pop();
+        test.unshift("New thing infront");
+        test.unshift("New2 thing infront");
+        test.unshift("New3 thing infront");
+        for(int i =1; i < test.length; i++){
+            System.out.println(test.get(i));
+        }
     }
 
     public SSNode head;
@@ -83,6 +89,7 @@ public class SinglyLinkedList {
         // this.length--;
     }
 
+    //Removing the head of a linked list
     public void shift() {
         if (this.head == this.tail) {
             if (this.head == null) {
@@ -98,5 +105,42 @@ public class SinglyLinkedList {
             // SSNode curHead = this.head;
             // this.head = curHead.next;
         }
+    }
+
+    //Pushing a new head into the linked list
+    public void unshift(String value) {
+        if(value.isEmpty()) return;
+        SSNode newNode = new SSNode(value);
+
+        if (this.head == null) {
+            this.head = newNode;
+            //forgot about the tail
+            this.tail = newNode;
+        } else {
+            SSNode oldHead = this.head;
+            this.head = newNode;
+            this.head.next = oldHead;
+        }
+        //forgot to increment the length
+        this.length++;
+    }
+
+    public String get(int index){
+        if(this.head == null || index > this.length || index < 0) {
+            return null;
+        }else if(this.head != null && index == 0){
+            return this.head.value;
+        }
+
+        SSNode pointer = this.head;
+        int tempIndex = 1;
+
+        while(tempIndex != index){
+            pointer = pointer.next;
+            tempIndex++;
+        }
+
+        return pointer.value;
+
     }
 }
