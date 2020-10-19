@@ -18,6 +18,15 @@ public class SinglyLinkedList {
         for(int i =1; i < test.length; i++){
             System.out.println(test.get(i));
         }
+
+
+        test.set(1,"HOBoken");
+        test.set(4,"new thing 99");
+        System.out.println("---------------------");
+        for(int i =1; i < test.length; i++){
+            System.out.println(test.get(i));
+        }
+
     }
 
     public SSNode head;
@@ -142,5 +151,28 @@ public class SinglyLinkedList {
 
         return pointer.value;
 
+    }
+
+    // You could also just use the previous "Get" function as well
+    public void set(int index, String setValue){
+        if(index < 0 || index > this.length || setValue.isEmpty()){
+            return;
+        }else if(index == 0 && !setValue.isEmpty()){
+            this.head.value = setValue;
+        }
+
+        int counter = 0;
+        SSNode pointer = this.head;
+
+        while(counter != index){
+            pointer = pointer.next;
+            counter++; // forgot to increment counter
+        }
+        pointer.value = setValue;
+        return;
+    }
+
+    public void insert(int index, String value){
+        SSNode newNode = new SSNode(value);
     }
 }
