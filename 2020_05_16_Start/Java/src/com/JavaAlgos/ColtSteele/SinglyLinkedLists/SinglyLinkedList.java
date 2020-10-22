@@ -7,26 +7,34 @@ public class SinglyLinkedList {
         test.push("value");
         test.push("pie");
         test.push("cows");
-
         test.shift();
-        // test.pop();
-        // test.pop();
-        // test.pop();
         test.unshift("New thing infront");
         test.unshift("New2 thing infront");
         test.unshift("New3 thing infront");
         for(int i =1; i < test.length; i++){
             System.out.println(test.get(i));
         }
-
-
         test.set(1,"HOBoken");
         test.set(4,"new thing 99");
         System.out.println("---------------------");
         for(int i =1; i < test.length; i++){
             System.out.println(test.get(i));
         }
-
+        System.out.println("---------------------");
+        test.insert(0, "111111");
+        test.insert(test.length, "99");
+        test.insert(2,"middle");
+        System.out.println("---------------------");
+        for(int i =1; i < test.length; i++){
+            System.out.println(test.get(i));
+        }
+        System.out.println("---------------------");
+        test.remove(test.length);
+        System.out.println("---------------------");
+        for(int i =1; i < test.length; i++){
+            System.out.println(test.get(i));
+        }
+        System.out.println("---------------------");
     }
 
     public SSNode head;
@@ -114,6 +122,7 @@ public class SinglyLinkedList {
             // SSNode curHead = this.head;
             // this.head = curHead.next;
         }
+        this.length--;
     }
 
     //Pushing a new head into the linked list
@@ -137,8 +146,6 @@ public class SinglyLinkedList {
     public String get(int index){
         if(this.head == null || index > this.length || index < 0) {
             return null;
-        }else if(this.head != null && index == 0){
-            return this.head.value;
         }
 
         SSNode pointer = this.head;
@@ -174,5 +181,61 @@ public class SinglyLinkedList {
 
     public void insert(int index, String value){
         SSNode newNode = new SSNode(value);
+        if(index < 0 || index > this.length || value.isEmpty()){
+            return;
+        }
+        if(index == 0){
+            SSNode oldhead = this.head;
+            newNode.next = oldhead;
+            this.head = newNode;
+            this.length++;
+            return;
+        }
+        int count = 1;
+        SSNode pointer = this.head;
+        SSNode prevpointer = null;
+
+        while(count != index){
+            prevpointer = pointer;
+            pointer = pointer.next;
+            count++;
+        }
+        prevpointer.next = newNode;
+        newNode.next = pointer;
+        // during a successful insert you are always
+        // gonna end up with a bigger linked list
+        this.length++;
+        return;
+    }
+
+    public void remove(int index){
+        if(index < 0 || index > this.length || this.head == null){
+            return;
+        }
+
+        if(index == 0 && this.head != null) {
+            this.head = null;
+            return;
+        }
+
+        SSNode fir = null;
+        SSNode mid = this.head;
+        SSNode las = null;
+        int count = 1;
+
+        while(count != index){
+            fir = mid;
+            mid = mid.next;
+            if(mid.next != null){
+                las = mid.next;
+            }else{
+                las = null;
+            }
+            count++;
+        }
+        fir.next = las;
+        mid.next = null;
+        this.length--;
+        return;
     }
 }
